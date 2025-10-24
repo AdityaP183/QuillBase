@@ -10,7 +10,6 @@ export class AuthService {
 
     register(registerDto: RegisterDto) {
         const user = this.userSerivce.getUserByEmail(registerDto.email);
-        const dbUrl = process.env.DATABASE_URL || "No database url found";
-        return { message: "User registered successfully", user, dbUrl };
+        return { message: "User registered successfully", user };
     }
 }
