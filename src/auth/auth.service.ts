@@ -8,8 +8,8 @@ export class AuthService {
         this.userSerivce = userSerivce;
     }
 
-    register(registerDto: RegisterDto) {
-        const user = this.userSerivce.getUserByEmail(registerDto.email);
+    async register(registerDto: RegisterDto) {
+        const user = await this.userSerivce.getUserByEmail(registerDto.email);
         return { message: "User registered successfully", user };
     }
 }
